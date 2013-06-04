@@ -1,0 +1,5 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<dimen name="padding_top">20dp</dimen>
+<dimen name="text_size">20dp</dimen>
+
+</resources>
