@@ -2,6 +2,7 @@ package com.pozool.overla;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -110,6 +111,21 @@ public class OverlayComponent extends FrameLayout{
 	public void withCloseButton(OnClickListener closeCallback) {
 		this.hasCloseButton = true;
 		this.closeCallback = closeCallback;
+	}
+	
+	public void setHighlightText(String highLightText) {
+		int padding = getResources().getDimensionPixelOffset(R.dimen.padding_highlight);
+		TextView textView = new TextView(getContext());
+		textView.setText(highLightText);
+		textView.setTextSize(getResources().getDimension(R.dimen.text_size));
+		textView.setTextColor(getResources().getColor(android.R.color.white));
+		textView.setGravity(Gravity.CENTER);
+		textView.setPadding(padding, padding, padding, padding);
+		textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.figertap, 0, 0);
+		
+		LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params.gravity = Gravity.CENTER;
+		this.addView(textView, params);
 	}
 	
 	interface OverlayCallback extends OnClickListener{}
