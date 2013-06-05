@@ -1,4 +1,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <item type="id" name="overlay_frame" />
 <item type="id" name="button_close" />
+<item type="id" name="text_highlight" />
 </resources>
